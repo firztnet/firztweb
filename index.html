@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Firztweb · Diseño de páginas web que además funcionan de verdad: formularios conectados a sistemas reales, no solo maquetación.">
+<meta property="og:title" content="Firztweb · Diseño web que conecta">
+<meta property="og:description" content="Webs modernas conectadas a sistemas reales — no solo diseño bonito.">
+<meta name="theme-color" content="#12141A">
+<title>Firztweb · Diseño web que conecta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12141A; --surface:#1B1E27; --surface-raised:#232733; --text:#F3F1EC; --text-dim:#9A9FAE;
+  --line:#2A2E3A; --indigo:#5B5FEF; --indigo-deep:#4548C9; --coral:#FF6B5C; --coral-deep:#E5493B;
+  --green:#4ADE80;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif; font-weight:600; line-height:1.15; letter-spacing:-0.01em;}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+.container{max-width:1080px; margin:0 auto; padding:0 28px;}
+button{font-family:inherit; cursor:pointer;}
+:focus-visible{outline:2.5px solid var(--indigo); outline-offset:3px; border-radius:3px;}
+@media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+/* NAV */
+#navbar{position:sticky; top:0; z-index:100; background:rgba(18,20,26,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1080px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between;}
+.logo{font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:700; color:var(--text);}
+.logo span{color:var(--indigo);}
+.nav-links{list-style:none; display:flex; align-items:center; gap:30px;}
+.nav-link{font-size:14.5px; font-weight:500; color:var(--text-dim); transition:color .15s ease;}
+.nav-link:hover{color:var(--text);}
+.nav-cta{background:var(--coral); color:#fff !important; padding:9px 18px; border-radius:8px; font-weight:600;}
+.nav-cta:hover{background:var(--coral-deep);}
+.nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px;}
+.nav-toggle span{width:22px; height:2px; background:var(--text);}
+
+/* HERO */
+#hero{padding:80px 0 60px;}
+.hero-grid{display:grid; grid-template-columns:1fr 0.9fr; gap:56px; align-items:center;}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--text-dim); margin-bottom:20px;}
+.badge-dot{width:7px; height:7px; border-radius:50%; background:var(--green);}
+.hero-content h1{font-size:clamp(34px,4.4vw,50px); margin-bottom:20px;}
+.hero-sub{font-size:17px; color:var(--text-dim); max-width:46ch; margin-bottom:32px;}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap;}
+.btn-primary{background:var(--coral); color:#fff; padding:14px 26px; border-radius:9px; font-weight:600; font-size:15px; display:inline-block; transition:background .15s ease, transform .15s ease;}
+.btn-primary:hover{background:var(--coral-deep); transform:translateY(-1px);}
+.btn-outline{background:transparent; border:1.5px solid var(--line); color:var(--text); padding:13px 24px; border-radius:9px; font-weight:600; font-size:15px; display:inline-block; transition:border-color .15s ease;}
+.btn-outline:hover{border-color:var(--indigo);}
+
+/* demo card en el héroe (reutiliza la técnica de inclinación) */
+.demo-wrap{perspective:1200px;}
+.demo-card{
+  position:relative; border-radius:18px; overflow:hidden; aspect-ratio:4/3;
+  background:linear-gradient(135deg, var(--indigo) 0%, #8B5CF6 100%);
+  box-shadow:0 20px 50px -16px rgba(91,95,239,0.5);
+  transform-style:preserve-3d; transition:transform .12s ease-out; will-change:transform;
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;
+}
+.demo-shine{position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .25s ease;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.45) 0%, transparent 55%);
+  mix-blend-mode:overlay;}
+.demo-card:hover .demo-shine{opacity:1;}
+.demo-label{color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px;}
+.demo-sub{color:rgba(255,255,255,0.85); font-size:12.5px;}
+
+/* SERVICIOS */
+#servicios{padding:64px 0;}
+.section-eyebrow{font-size:13px; color:var(--indigo); font-weight:600; margin-bottom:10px;}
+#servicios h2{font-size:clamp(26px,3.2vw,32px); margin-bottom:44px; max-width:520px;}
+.servicios-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.servicio-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:34px;}
+.servicio-icon{width:38px; height:38px; margin-bottom:18px;}
+.servicio-icon svg{width:100%; height:100%; stroke:var(--indigo); fill:none; stroke-width:1.6;}
+.servicio-card h3{font-size:20px; margin-bottom:12px;}
+.servicio-card p{font-size:14.5px; color:var(--text-dim); line-height:1.65;}
+
+/* PROYECTO DESTACADO */
+#proyecto{padding:64px 0;}
+.proyecto-wrap{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;}
+.proyecto-tag{display:inline-block; background:rgba(74,222,128,0.12); color:var(--green); font-size:12px; font-weight:700; padding:4px 12px; border-radius:999px; margin-bottom:16px;}
+.proyecto-wrap h2{font-size:clamp(24px,3vw,30px); margin-bottom:14px;}
+.proyecto-wrap p{font-size:14.5px; color:var(--text-dim); line-height:1.65; margin-bottom:22px;}
+.proyecto-checks{list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:26px;}
+.proyecto-checks li{font-size:14px; color:var(--text); display:flex; align-items:center; gap:10px;}
+.proyecto-checks li::before{content:"✓"; color:var(--green); font-weight:700;}
+.proyecto-mock{border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 20px 50px -20px rgba(0,0,0,0.5);}
+.proyecto-mock img{width:100%; display:block;}
+
+/* CONTACTO */
+#contacto{padding:64px 0 90px;}
+.contact-box{background:linear-gradient(135deg, var(--indigo) 0%, #8B5CF6 100%); border-radius:20px; padding:52px; text-align:center;}
+.contact-box h2{color:#fff; font-size:clamp(26px,3.4vw,34px); margin-bottom:14px;}
+.contact-box p{color:rgba(255,255,255,0.85); font-size:15px; margin-bottom:30px;}
+.contact-links{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+.contact-link{background:#fff; color:var(--indigo-deep) !important; padding:13px 24px; border-radius:9px; font-weight:700; font-size:14.5px; display:inline-flex; align-items:center; gap:8px;}
+.contact-link.outline{background:transparent; border:1.5px solid rgba(255,255,255,0.5); color:#fff !important;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line); padding:26px 0;}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;}
+footer p{font-size:13px; color:var(--text-dim);}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .demo-wrap{order:-1; max-width:340px; margin:0 auto;}
+  .servicios-grid{grid-template-columns:1fr;}
+  .proyecto-wrap{grid-template-columns:1fr; padding:32px 26px;}
+  .contact-box{padding:36px 24px;}
+}
+@media (max-width:680px){
+  .nav-links{position:fixed; top:65px; left:0; right:0; background:var(--bg); flex-direction:column; padding:20px 28px; border-bottom:1px solid var(--line); display:none; gap:16px; align-items:flex-start;}
+  .nav-links.open{display:flex;}
+  .nav-toggle{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">Firzt<span>web</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      <li><a href="#proyecto" class="nav-link">Proyectos</a></li>
+      <li><a href="#contacto" class="nav-cta" data-evento="boton_hablemos_nav">Hablemos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="badge-dot"></span>Disponible para nuevos proyectos</div>
+      <h1>Webs que no solo se ven bien, funcionan de verdad.</h1>
+      <p class="hero-sub">Diseño páginas modernas y las conecto a sistemas reales — formularios que llegan a donde tienen que llegar, no solo un bonito "mensaje enviado" que no va a ningún sitio.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary" data-evento="boton_hablemos_hero">Hablemos de tu proyecto</a>
+        <a href="#proyecto" class="btn-outline" data-evento="boton_ver_caso_real">Ver un caso real</a>
+      </div>
+    </div>
+    <div class="demo-wrap">
+      <div class="demo-card" data-tilt>
+        <div class="demo-shine"></div>
+        <div class="demo-label">Mueve el ratón aquí</div>
+        <div class="demo-sub">esto también lo puedo montar para ti</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="section-eyebrow">Servicios</div>
+    <h2>Dos cosas, hechas bien</h2>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 2l7.586 7.586" stroke-linecap="round"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>Diseño de páginas web</h3>
+        <p>Webs modernas, rápidas y pensadas para tu negocio concreto — nada de plantillas genéricas. Diseño a medida, con una identidad visual propia.</p>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M18.36 5.64a9 9 0 11-12.73 0" stroke-linecap="round"/><line x1="12" y1="2" x2="12" y2="12" stroke-linecap="round"/></svg></div>
+        <h3>Conexión con sistemas reales</h3>
+        <p>Formularios que de verdad llegan a tu email, tu CRM o tu panel de gestión — no solo una animación de "enviado" que no hace nada por detrás.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyecto">
+  <div class="container">
+    <div class="proyecto-wrap">
+      <div>
+        <span class="proyecto-tag">Caso real</span>
+        <h2>Firztnet — reparación de ordenadores</h2>
+        <p>Web pública conectada directamente a un sistema de gestión completo: cada solicitud del formulario llega en tiempo real al panel del negocio, sin pasos manuales de por medio.</p>
+        <ul class="proyecto-checks">
+          <li>Formulario conectado a un backend real</li>
+          <li>Panel de gestión con notificaciones automáticas</li>
+          <li>Diseño responsive, rápido de cargar</li>
+        </ul>
+        <a href="https://firztnet.github.io/miweb/" target="_blank" rel="noopener" class="btn-outline" data-evento="boton_ver_firztnet_vivo">Ver la web en vivo →</a>
+      </div>
+      <div class="proyecto-mock">
+        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80" alt="Vista previa de la web de Firztnet">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <div class="contact-box">
+      <h2>¿Hablamos de tu proyecto?</h2>
+      <p>Cuéntame qué necesitas y te digo, sin rodeos, si puedo ayudarte.</p>
+      <div class="contact-links">
+        <a href="tel:+34601641704" class="contact-link" data-evento="boton_llamar"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg> 601 641 704</a>
+        <a href="mailto:firztnet@gmail.com" class="contact-link outline" data-evento="boton_email"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg> firztnet@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="#hero" class="logo">Firzt<span>web</span></a>
+    <p>© 2026 Firztweb</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-link, .nav-cta').forEach(function(el){
+  el.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+});
+
+var prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefiereMenosMovimiento){
+  document.querySelectorAll('[data-tilt]').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      var maxGrados = 14;
+      card.style.transform = 'perspective(900px) rotateY(' + (x * maxGrados) + 'deg) rotateX(' + (-y * maxGrados) + 'deg) scale(1.04)';
+      card.style.setProperty('--mx', ((x + 0.5) * 100) + '%');
+      card.style.setProperty('--my', ((y + 0.5) * 100) + '%');
+    });
+    card.addEventListener('mouseleave', function(){
+      card.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  });
+}
+
+// Contador de visitas propio (sin cookies, sin datos personales — solo cuenta, no identifica)
+var API_ESTADISTICAS = 'https://firztnet-backend-production.up.railway.app/api/estadisticas';
+var SITIO_ACTUAL = 'firztweb';
+
+fetch(API_ESTADISTICAS + '/visita', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    sitio: SITIO_ACTUAL,
+    ruta: window.location.pathname + window.location.hash,
+    referido: document.referrer || 'directo',
+    dispositivo: window.innerWidth <= 768 ? 'movil' : 'escritorio',
+  }),
+}).catch(function(){ /* si falla, no pasa nada — nunca debe romper la navegación del visitante */ });
+
+function registrarEvento(tipo, etiqueta){
+  fetch(API_ESTADISTICAS + '/evento', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sitio: SITIO_ACTUAL, tipo: tipo, etiqueta: etiqueta }),
+  }).catch(function(){ /* igual que arriba: si falla, no debe notarse en la navegación */ });
+}
+
+document.querySelectorAll('[data-evento]').forEach(function(el){
+  el.addEventListener('click', function(){
+    registrarEvento('clic', el.getAttribute('data-evento'));
+  });
+});
+
+if('IntersectionObserver' in window){
+  var observadorSecciones = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(entrada){
+      if(entrada.isIntersecting){
+        registrarEvento('seccion_vista', 'seccion_' + entrada.target.id);
+        observadorSecciones.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('section[id]').forEach(function(seccion){
+    observadorSecciones.observe(seccion);
+  });
+}
+</script>
+</body>
+</html>
