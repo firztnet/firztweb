@@ -288,7 +288,7 @@ async function enviarFormularioFirztweb(){
     var res = await fetch('https://firztnet-backend-production.up.railway.app/api/seguimiento/solicitar-presupuesto', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nombre: nombre, telefono: telefono, mensaje: mensaje || '(sin detalles adicionales — proyecto de diseño web)' }),
+      body: JSON.stringify({ nombre: nombre, telefono: telefono, mensaje: mensaje || '(sin detalles adicionales — proyecto de diseño web)', negocio: 'firztweb' }),
     });
     var datos = await res.json();
     if(!res.ok) throw new Error(datos.error || 'No se pudo enviar');
