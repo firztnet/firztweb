@@ -201,9 +201,31 @@ footer p{font-size:13px; color:var(--text-dim);}
     <div class="contact-box">
       <h2>¿Hablamos de tu proyecto?</h2>
       <p>Cuéntame qué necesitas y te digo, sin rodeos, si puedo ayudarte.</p>
-      <div class="contact-links">
-        <a href="tel:+34601641704" class="contact-link" data-evento="boton_llamar"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg> 601 641 704</a>
-        <a href="mailto:firztnet@gmail.com" class="contact-link outline" data-evento="boton_email"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg> firztnet@gmail.com</a>
+
+      <form id="contactForm" onsubmit="return false;" style="max-width:440px; margin:0 auto; text-align:left;">
+        <div style="margin-bottom:14px;">
+          <label for="nombre" style="display:block; font-size:12.5px; font-weight:600; color:#fff; margin-bottom:5px;">Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" style="width:100%; padding:11px 13px; border-radius:8px; border:1.5px solid rgba(255,255,255,0.35); background:rgba(255,255,255,0.1); color:#fff; font-family:inherit; font-size:14px; box-sizing:border-box;" required>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="telefono" style="display:block; font-size:12.5px; font-weight:600; color:#fff; margin-bottom:5px;">Teléfono</label>
+          <input type="tel" id="telefono" placeholder="6xx xxx xxx" style="width:100%; padding:11px 13px; border-radius:8px; border:1.5px solid rgba(255,255,255,0.35); background:rgba(255,255,255,0.1); color:#fff; font-family:inherit; font-size:14px; box-sizing:border-box;" required>
+        </div>
+        <div style="margin-bottom:18px;">
+          <label for="mensaje" style="display:block; font-size:12.5px; font-weight:600; color:#fff; margin-bottom:5px;">Cuéntame tu proyecto</label>
+          <textarea id="mensaje" placeholder="Qué necesitas, para cuándo..." style="width:100%; min-height:80px; padding:11px 13px; border-radius:8px; border:1.5px solid rgba(255,255,255,0.35); background:rgba(255,255,255,0.1); color:#fff; font-family:inherit; font-size:14px; box-sizing:border-box; resize:vertical;"></textarea>
+        </div>
+        <div id="fw-form-error" style="display:none; color:#FFD9D2; font-size:12.5px; margin-bottom:12px;"></div>
+        <button type="button" id="fw-submit-btn" onclick="enviarFormularioFirztweb()" style="width:100%; background:#fff; color:#4548C9; border:none; padding:13px; border-radius:9px; font-weight:700; font-size:14.5px; cursor:pointer;">Enviar solicitud</button>
+        <div id="fw-form-success" style="display:none; background:rgba(255,255,255,0.18); color:#fff; border-radius:8px; padding:12px 14px; font-size:13px; margin-top:12px; text-align:center;">✓ Recibido — te contacto en breve.</div>
+      </form>
+
+      <div style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.25);">
+        <div style="font-size:12.5px; color:rgba(255,255,255,0.8); margin-bottom:14px;">O si prefieres algo más directo:</div>
+        <div class="contact-links">
+          <a href="https://wa.me/34601641704" target="_blank" rel="noopener" class="contact-link" data-evento="boton_whatsapp"><svg viewBox="0 0 24 24" width="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L0 24l6.335-1.611A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.37l-.36-.213-3.76.956.996-3.671-.234-.377A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg> WhatsApp</a>
+          <a href="tel:+34601641704" class="contact-link outline" data-evento="boton_llamar"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg> 601 641 704</a>
+        </div>
       </div>
     </div>
   </div>
@@ -240,6 +262,49 @@ if(!prefiereMenosMovimiento){
       card.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg) scale(1)';
     });
   });
+}
+
+// Formulario de contacto → conectado al mismo sistema que Firztnet.
+// Cada envío llega a "Solicitudes" en el panel, marcado como "Nuevo contacto".
+async function enviarFormularioFirztweb(){
+  var nombre = document.getElementById('nombre').value.trim();
+  var telefono = document.getElementById('telefono').value.trim();
+  var mensaje = document.getElementById('mensaje').value.trim();
+  var boton = document.getElementById('fw-submit-btn');
+  var exito = document.getElementById('fw-form-success');
+  var error = document.getElementById('fw-form-error');
+
+  error.style.display = 'none';
+  if(!nombre || !telefono){
+    error.textContent = 'Por favor, completa al menos tu nombre y tu teléfono.';
+    error.style.display = 'block';
+    return;
+  }
+
+  boton.disabled = true;
+  boton.textContent = 'Enviando...';
+
+  try{
+    var res = await fetch('https://firztnet-backend-production.up.railway.app/api/seguimiento/solicitar-presupuesto', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre: nombre, telefono: telefono, mensaje: mensaje || '(sin detalles adicionales — proyecto de diseño web)' }),
+    });
+    var datos = await res.json();
+    if(!res.ok) throw new Error(datos.error || 'No se pudo enviar');
+
+    exito.style.display = 'block';
+    document.getElementById('nombre').value = '';
+    document.getElementById('telefono').value = '';
+    document.getElementById('mensaje').value = '';
+    boton.textContent = 'Enviar solicitud';
+  }catch(err){
+    error.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp.';
+    error.style.display = 'block';
+    boton.textContent = 'Enviar solicitud';
+  }finally{
+    boton.disabled = false;
+  }
 }
 
 // Contador de visitas propio (sin cookies, sin datos personales — solo cuenta, no identifica)
