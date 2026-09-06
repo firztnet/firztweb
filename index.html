@@ -312,4 +312,84 @@ async function enviarFormularioFirztweb(){
   var telefono = document.getElementById('telefono').value.trim();
   var mensaje = document.getElementById('mensaje').value.trim();
   var boton = document.getElementById('fw-submit-btn');
-  var exito = docume
+  var exito = document.getElementById('fw-form-success');
+  var error = document.getElementById('fw-form-error');
+
+  error.style.display = 'none';
+  if(!nombre || !telefono){
+    error.textContent = 'Por favor, completa al menos tu nombre y tu teléfono.';
+    error.style.display = 'block';
+    return;
+  }
+
+  boton.disabled = true;
+  boton.textContent = 'Enviando...';
+
+  try{
+    var res = await fetch('https://firztnet-backend-production.up.railway.app/api/seguimiento/solicitar-presupuesto', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre: nombre, telefono: telefono, mensaje: mensaje || '(sin detalles adicionales — proyecto de diseño web)', negocio: 'firztweb' }),
+    });
+    var datos = await res.json();
+    if(!res.ok) throw new Error(datos.error || 'No se pudo enviar');
+
+    exito.style.display = 'block';
+    document.getElementById('nombre').value = '';
+    document.getElementById('telefono').value = '';
+    document.getElementById('mensaje').value = '';
+    boton.textContent = 'Enviar solicitud';
+  }catch(err){
+    error.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp.';
+    error.style.display = 'block';
+    boton.textContent = 'Enviar solicitud';
+  }finally{
+    boton.disabled = false;
+  }
+}
+
+// Contador de visitas propio (sin cookies, sin datos personales — solo cuenta, no identifica)
+var API_ESTADISTICAS = 'https://firztnet-backend-production.up.railway.app/api/estadisticas';
+var SITIO_ACTUAL = 'firztweb';
+
+fetch(API_ESTADISTICAS + '/visita', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    sitio: SITIO_ACTUAL,
+    ruta: window.location.pathname + window.location.hash,
+    referido: document.referrer || 'directo',
+    dispositivo: window.innerWidth <= 768 ? 'movil' : 'escritorio',
+  }),
+}).catch(function(){ /* si falla, no pasa nada — nunca debe romper la navegación del visitante */ });
+
+function registrarEvento(tipo, etiqueta){
+  fetch(API_ESTADISTICAS + '/evento', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sitio: SITIO_ACTUAL, tipo: tipo, etiqueta: etiqueta }),
+  }).catch(function(){ /* igual que arriba: si falla, no debe notarse en la navegación */ });
+}
+
+document.querySelectorAll('[data-evento]').forEach(function(el){
+  el.addEventListener('click', function(){
+    registrarEvento('clic', el.getAttribute('data-evento'));
+  });
+});
+
+if('IntersectionObserver' in window){
+  var observadorSecciones = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(entrada){
+      if(entrada.isIntersecting){
+        registrarEvento('seccion_vista', 'seccion_' + entrada.target.id);
+        observadorSecciones.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('section[id]').forEach(function(seccion){
+    observadorSecciones.observe(seccion);
+  });
+}
+</script>
+</body>
+</html>
