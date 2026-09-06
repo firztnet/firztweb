@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Firztweb · Diseño de páginas web que además funcionan de verdad: formularios conectados a sistemas reales, no solo maquetación.">
+<meta name="description" content="Firztweb · Webs, apps móviles y sistemas de gestión a medida, conectados de verdad — no solo bonitos por fuera.">
 <meta property="og:title" content="Firztweb · Diseño web que conecta">
-<meta property="og:description" content="Webs modernas conectadas a sistemas reales — no solo diseño bonito.">
+<meta property="og:description" content="Webs, apps y sistemas de gestión a medida, conectados de verdad.">
 <meta name="theme-color" content="#12141A">
-<title>Firztweb · Diseño web que conecta</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<title>Firztweb · Webs, apps y sistemas a medida</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -74,7 +77,7 @@ button{font-family:inherit; cursor:pointer;}
 #servicios{padding:64px 0;}
 .section-eyebrow{font-size:13px; color:var(--indigo); font-weight:600; margin-bottom:10px;}
 #servicios h2{font-size:clamp(26px,3.2vw,32px); margin-bottom:44px; max-width:520px;}
-.servicios-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.servicios-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:22px;}
 .servicio-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:34px;}
 .servicio-icon{width:38px; height:38px; margin-bottom:18px;}
 .servicio-icon svg{width:100%; height:100%; stroke:var(--indigo); fill:none; stroke-width:1.6;}
@@ -91,6 +94,12 @@ button{font-family:inherit; cursor:pointer;}
 .proyecto-checks li{font-size:14px; color:var(--text); display:flex; align-items:center; gap:10px;}
 .proyecto-checks li::before{content:"✓"; color:var(--green); font-weight:700;}
 .proyecto-mock{border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 20px 50px -20px rgba(0,0,0,0.5);}
+.proyecto-mock-collage{display:flex; flex-direction:column; gap:10px; background:var(--surface); padding:10px;}
+.collage-config{width:100%; border-radius:8px; display:block;}
+.proyecto-mock-collage .collage-row{display:flex; gap:10px;}
+.collage-login, .collage-menu{border-radius:8px; display:block; object-fit:cover; height:140px;}
+.collage-login{width:55%;}
+.collage-menu{width:45%;}
 .proyecto-mock img{width:100%; display:block;}
 
 /* CONTACTO */
@@ -139,8 +148,8 @@ footer p{font-size:13px; color:var(--text-dim);}
   <div class="container hero-grid">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="badge-dot"></span>Disponible para nuevos proyectos</div>
-      <h1>Webs que no solo se ven bien, funcionan de verdad.</h1>
-      <p class="hero-sub">Diseño páginas modernas y las conecto a sistemas reales — formularios que llegan a donde tienen que llegar, no solo un bonito "mensaje enviado" que no va a ningún sitio.</p>
+      <h1>No solo diseño. Construyo lo que tu negocio necesita de verdad.</h1>
+      <p class="hero-sub">Webs, aplicaciones móviles y sistemas de gestión a medida — conectados entre sí de verdad, no solo bonitos por fuera. Si tu negocio necesita algo que funcione, no solo que se vea bien, hablamos.</p>
       <div class="hero-actions">
         <a href="#contacto" class="btn-primary" data-evento="boton_hablemos_hero">Hablemos de tu proyecto</a>
         <a href="#proyecto" class="btn-outline" data-evento="boton_ver_caso_real">Ver un caso real</a>
@@ -159,7 +168,7 @@ footer p{font-size:13px; color:var(--text-dim);}
 <section id="servicios">
   <div class="container">
     <div class="section-eyebrow">Servicios</div>
-    <h2>Dos cosas, hechas bien</h2>
+    <h2>Tres cosas, hechas bien</h2>
     <div class="servicios-grid">
       <div class="servicio-card">
         <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 2l7.586 7.586" stroke-linecap="round"/><circle cx="11" cy="11" r="2"/></svg></div>
@@ -167,11 +176,17 @@ footer p{font-size:13px; color:var(--text-dim);}
         <p>Webs modernas, rápidas y pensadas para tu negocio concreto — nada de plantillas genéricas. Diseño a medida, con una identidad visual propia.</p>
       </div>
       <div class="servicio-card">
-        <div class="servicio-icon"><svg viewBox="0 0 24 24"><path d="M18.36 5.64a9 9 0 11-12.73 0" stroke-linecap="round"/><line x1="12" y1="2" x2="12" y2="12" stroke-linecap="round"/></svg></div>
-        <h3>Conexión con sistemas reales</h3>
-        <p>Formularios que de verdad llegan a tu email, tu CRM o tu panel de gestión — no solo una animación de "enviado" que no hace nada por detrás.</p>
+        <div class="servicio-icon"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="11" y1="18" x2="13" y2="18" stroke-linecap="round"/></svg></div>
+        <h3>Aplicaciones móviles</h3>
+        <p>Apps para tu negocio, para tus clientes, o para gestionar por dentro — pensadas para usarse de verdad, no solo para tenerlas.</p>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="3" width="7" height="5" rx="1" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="12" width="7" height="9" rx="1" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="16" width="7" height="5" rx="1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Sistemas de gestión a medida</h3>
+        <p>Paneles hechos para cómo trabajas tú de verdad — clientes, pedidos, facturas, lo que necesites — no un software genérico que te obliga a adaptarte tú a él.</p>
       </div>
     </div>
+    <p style="text-align:center; color:var(--text-dim); font-size:14px; margin-top:32px;">Y las tres cosas, conectadas entre sí de verdad — no solo bonitas por fuera.</p>
   </div>
 </section>
 
@@ -180,17 +195,43 @@ footer p{font-size:13px; color:var(--text-dim);}
     <div class="proyecto-wrap">
       <div>
         <span class="proyecto-tag">Caso real</span>
-        <h2>Firztnet — reparación de ordenadores</h2>
-        <p>Web pública conectada directamente a un sistema de gestión completo: cada solicitud del formulario llega en tiempo real al panel del negocio, sin pasos manuales de por medio.</p>
+        <h2>Firztnet — taller de reparación de ordenadores</h2>
+        <p>No es solo una web bonita: por detrás tiene un sistema de gestión completo, hecho a medida — clientes, reparaciones, facturas, inventario, y hasta estadísticas de sus propias webs, todo en un mismo panel.</p>
         <ul class="proyecto-checks">
-          <li>Formulario conectado a un backend real</li>
-          <li>Panel de gestión con notificaciones automáticas</li>
+          <li>Sistema de gestión a medida: clientes, reparaciones, facturas, inventario</li>
+          <li>Formulario web conectado directamente al panel, sin pasos manuales</li>
+          <li>Estadísticas de visitas y comportamiento, en tiempo real</li>
           <li>Diseño responsive, rápido de cargar</li>
         </ul>
         <a href="https://firztnet.github.io/miweb/" target="_blank" rel="noopener" class="btn-outline" data-evento="boton_ver_firztnet_vivo">Ver la web en vivo →</a>
       </div>
       <div class="proyecto-mock">
         <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80" alt="Vista previa de la web de Firztnet">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyecto2">
+  <div class="container">
+    <div class="proyecto-wrap">
+      <div class="proyecto-mock proyecto-mock-collage">
+        <img src="images/pos-config.png" alt="Configuración de Firztnet POS" class="collage-config">
+        <div class="collage-row">
+          <img src="images/pos-login.png" alt="Pantalla de acceso de Firztnet POS" class="collage-login">
+          <img src="images/pos-menu.png" alt="Menú del sistema Firztnet POS" class="collage-menu">
+        </div>
+      </div>
+      <div>
+        <span class="proyecto-tag">Caso real</span>
+        <h2>Firztnet POS — sistema de punto de venta</h2>
+        <p>Un sistema de gestión a medida para comercios de barrio: cobro en caja, control de inventario, clientes con crédito, y todo lo que un negocio físico necesita — sin pagar licencias de software genérico que no encaja con cómo trabaja de verdad cada tienda.</p>
+        <ul class="proyecto-checks">
+          <li>Punto de venta, productos e inventario en un mismo sitio</li>
+          <li>Clientes con cuenta de crédito, historial de ventas y caja</li>
+          <li>Configuración de ticket e impresora adaptada a cada comercio</li>
+          <li>Sistema propio, sin cuotas mensuales de software de terceros</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -271,84 +312,4 @@ async function enviarFormularioFirztweb(){
   var telefono = document.getElementById('telefono').value.trim();
   var mensaje = document.getElementById('mensaje').value.trim();
   var boton = document.getElementById('fw-submit-btn');
-  var exito = document.getElementById('fw-form-success');
-  var error = document.getElementById('fw-form-error');
-
-  error.style.display = 'none';
-  if(!nombre || !telefono){
-    error.textContent = 'Por favor, completa al menos tu nombre y tu teléfono.';
-    error.style.display = 'block';
-    return;
-  }
-
-  boton.disabled = true;
-  boton.textContent = 'Enviando...';
-
-  try{
-    var res = await fetch('https://firztnet-backend-production.up.railway.app/api/seguimiento/solicitar-presupuesto', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nombre: nombre, telefono: telefono, mensaje: mensaje || '(sin detalles adicionales — proyecto de diseño web)', negocio: 'firztweb' }),
-    });
-    var datos = await res.json();
-    if(!res.ok) throw new Error(datos.error || 'No se pudo enviar');
-
-    exito.style.display = 'block';
-    document.getElementById('nombre').value = '';
-    document.getElementById('telefono').value = '';
-    document.getElementById('mensaje').value = '';
-    boton.textContent = 'Enviar solicitud';
-  }catch(err){
-    error.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp.';
-    error.style.display = 'block';
-    boton.textContent = 'Enviar solicitud';
-  }finally{
-    boton.disabled = false;
-  }
-}
-
-// Contador de visitas propio (sin cookies, sin datos personales — solo cuenta, no identifica)
-var API_ESTADISTICAS = 'https://firztnet-backend-production.up.railway.app/api/estadisticas';
-var SITIO_ACTUAL = 'firztweb';
-
-fetch(API_ESTADISTICAS + '/visita', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    sitio: SITIO_ACTUAL,
-    ruta: window.location.pathname + window.location.hash,
-    referido: document.referrer || 'directo',
-    dispositivo: window.innerWidth <= 768 ? 'movil' : 'escritorio',
-  }),
-}).catch(function(){ /* si falla, no pasa nada — nunca debe romper la navegación del visitante */ });
-
-function registrarEvento(tipo, etiqueta){
-  fetch(API_ESTADISTICAS + '/evento', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ sitio: SITIO_ACTUAL, tipo: tipo, etiqueta: etiqueta }),
-  }).catch(function(){ /* igual que arriba: si falla, no debe notarse en la navegación */ });
-}
-
-document.querySelectorAll('[data-evento]').forEach(function(el){
-  el.addEventListener('click', function(){
-    registrarEvento('clic', el.getAttribute('data-evento'));
-  });
-});
-
-if('IntersectionObserver' in window){
-  var observadorSecciones = new IntersectionObserver(function(entradas){
-    entradas.forEach(function(entrada){
-      if(entrada.isIntersecting){
-        registrarEvento('seccion_vista', 'seccion_' + entrada.target.id);
-        observadorSecciones.unobserve(entrada.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  document.querySelectorAll('section[id]').forEach(function(seccion){
-    observadorSecciones.observe(seccion);
-  });
-}
-</script>
-</body>
-</html>
+  var exito = docume
