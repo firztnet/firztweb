@@ -13,6 +13,15 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ────────────────────────────────
+     HISTORY TRICK — evita cerrar la
+     página con la tecla "atrás" del móvil
+  ──────────────────────────────── */
+  history.pushState(null, '', location.href);
+  window.addEventListener('popstate', () => {
+    history.pushState(null, '', location.href);
+  });
+
+  /* ────────────────────────────────
      TEMA CLARO / OSCURO
   ──────────────────────────────── */
   const html          = document.documentElement;
@@ -229,8 +238,8 @@
       if (formOk) formOk.hidden = false;
       registrarEvento('clic', 'formulario_enviado_ok');
     })
-    .catch(err => {
-      if (formErr) { formErr.textContent = 'Error: ' + (err?.message || 'Sin respuesta del servidor'); formErr.hidden = false; }
+    .catch(() => {
+      if (formErr) { formErr.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp.'; formErr.hidden = false; }
     })
     .finally(() => {
       submitBtn.disabled = false;

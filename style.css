@@ -699,6 +699,26 @@ h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 900; line-height: 1.0
 .btn-submit:hover:not(:disabled) { opacity: .9; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(167,139,250,0.4); }
 .btn-submit:disabled { opacity: .55; cursor: not-allowed; }
 
+#formOk {
+  margin-top: 1rem;
+  padding: .75rem 1rem;
+  border-radius: 8px;
+  background: rgba(16,185,129,.15);
+  border: 1px solid rgba(16,185,129,.35);
+  color: #10b981;
+  font-size: .9rem;
+  font-weight: 500;
+}
+#formErr {
+  margin-top: 1rem;
+  padding: .75rem 1rem;
+  border-radius: 8px;
+  background: rgba(239,68,68,.12);
+  border: 1px solid rgba(239,68,68,.3);
+  color: #f87171;
+  font-size: .9rem;
+}
+
 /* ═══════════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════════ */
@@ -731,6 +751,12 @@ footer { background: var(--bg-elevated); border-top: 1px solid var(--border); pa
   .hero-visual { order: -1; max-width: 480px; margin-inline: auto; }
   :root { --cube-size: 200px; }
   .cube { animation-duration: 16s; }
+  .cube-front  { transform: translateZ(100px); }
+  .cube-back   { transform: rotateY(180deg) translateZ(100px); }
+  .cube-right  { transform: rotateY(90deg) translateZ(100px); }
+  .cube-left   { transform: rotateY(-90deg) translateZ(100px); }
+  .cube-top    { transform: rotateX(90deg) translateZ(100px); }
+  .cube-bottom { transform: rotateX(-90deg) translateZ(100px); }
   .contact-grid { grid-template-columns: 1fr; }
   .proceso-grid::before { display: none; }
 }
