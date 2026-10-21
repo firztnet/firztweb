@@ -4,7 +4,7 @@
   "description": "Webs, apps y sistemas de gestión a medida — conectados de verdad.",
   "start_url": "/firztweb/",
   "scope": "/firztweb/",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#1a1425",
   "theme_color": "#1a1425",

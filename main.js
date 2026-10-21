@@ -13,6 +13,46 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ────────────────────────────────
+     BANNER PWA — solo iOS, solo si
+     no está instalada y no lo cerró
+  ──────────────────────────────── */
+  /* ────────────────────────────────
+     BOTÓN SALIR — solo cuando está
+     instalada como PWA
+  ──────────────────────────────── */
+  const isPwa = window.navigator.standalone === true
+    || window.matchMedia('(display-mode: fullscreen)').matches
+    || window.matchMedia('(display-mode: standalone)').matches;
+
+  if (isPwa) {
+    const salirItem = document.getElementById('navSalirItem');
+    const salirBtn  = document.getElementById('navSalir');
+    if (salirItem) salirItem.style.display = 'block';
+    salirBtn?.addEventListener('click', e => {
+      e.preventDefault();
+      window.close();
+      // Fallback por si window.close() no funciona en algunos Android
+      setTimeout(() => { history.go(-(history.length - 1)); }, 200);
+    });
+  }
+
+  const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isInstalled = window.navigator.standalone === true;
+  const bannnerDismissed = localStorage.getItem('fw-ios-banner') === '1';
+
+  if (isIos && !isInstalled && !bannnerDismissed) {
+    const banner = document.getElementById('iosBanner');
+    const closeBtn = document.getElementById('iosBannerClose');
+    if (banner) {
+      setTimeout(() => { banner.style.display = 'block'; }, 2500);
+      closeBtn?.addEventListener('click', () => {
+        banner.style.display = 'none';
+        try { localStorage.setItem('fw-ios-banner', '1'); } catch(e) {}
+      });
+    }
+  }
+
+  /* ────────────────────────────────
      HISTORY TRICK — evita cerrar la
      página con la tecla "atrás" del móvil
   ──────────────────────────────── */
