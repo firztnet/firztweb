@@ -188,11 +188,12 @@
   const formOk    = document.getElementById('formOk');
   const submitBtn = document.getElementById('submitBtn');
 
-  form?.addEventListener('submit', async e => {
+  form?.addEventListener('submit', e => {
     e.preventDefault();
 
     const nombre   = form.nombre?.value.trim();
     const telefono = form.telefono?.value.trim();
+    const email    = form.email?.value.trim();
     const mensaje  = form.mensaje?.value.trim();
 
     // Reset
@@ -210,32 +211,31 @@
     const btnSpan = submitBtn.querySelector('span');
     if (btnSpan) btnSpan.textContent = 'Enviando…';
 
-    try {
-      const res = await fetch(
-        'https://firztnet-backend-production.up.railway.app/api/seguimiento/solicitar-presupuesto',
-        {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            nombre,
-            telefono,
-            mensaje: mensaje || '(sin detalles adicionales — proyecto de diseño web)',
-            negocio: 'firztweb',
-          }),
-        }
-      );
-      const datos = await res.json();
-      if (!res.ok) throw new Error(datos.error || 'Error del servidor');
-
+    fetch('https://firztnet-backend-production.up.railway.app/api/seguimiento/solicitar-presupuesto', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nombre,
+        telefono,
+        email:   email || '',
+        mensaje: mensaje || '(sin detalles adicionales — proyecto de diseño web)',
+        negocio: 'firztweb',
+      }),
+    })
+    .then(res => res.json().then(datos => ({ ok: res.ok, datos })))
+    .then(({ ok, datos }) => {
+      if (!ok) throw new Error(datos.error || 'Error del servidor');
       form.reset();
       if (formOk) formOk.hidden = false;
       registrarEvento('clic', 'formulario_enviado_ok');
-    } catch {
-      if (formErr) { formErr.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp.'; formErr.hidden = false; }
-    } finally {
+    })
+    .catch(err => {
+      if (formErr) { formErr.textContent = 'Error: ' + (err?.message || 'Sin respuesta del servidor'); formErr.hidden = false; }
+    })
+    .finally(() => {
       submitBtn.disabled = false;
       if (btnSpan) btnSpan.textContent = 'Enviar solicitud';
-    }
+    });
   });
 
   /* ────────────────────────────────
