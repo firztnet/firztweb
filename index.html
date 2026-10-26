@@ -28,7 +28,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#proceso">Cómo trabajo</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#sistemas">Sistemas</a></li>
         <li><a href="#contacto" class="nav-cta" data-evento="boton_hablemos_nav">
           <span class="nav-ping"></span>Hablemos
         </a></li>
@@ -92,8 +92,8 @@
           Hablemos de tu proyecto
           <svg viewBox="0 0 20 20" width="16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
         </a>
-        <a href="#proyectos" class="btn-ghost" data-evento="boton_ver_proyectos">
-          Ver proyectos reales
+        <a href="#sistemas" class="btn-ghost" data-evento="boton_ver_sistemas">
+          Ver sistemas
         </a>
       </div>
 
@@ -196,10 +196,12 @@
     <span class="clients-label">Proyectos en producción</span>
     <div class="clients-list">
       <span class="client-name">Firztnet</span>
-      <span class="client-name">Firztnet POS</span>
-      <span class="client-name">Techcompara</span>
-      <span class="client-name">Sistema Reparto</span>
-      <span class="client-name">Sistema Reformas</span>
+      <span class="client-name">POS · Comercio</span>
+      <span class="client-name">Hostelería</span>
+      <span class="client-name">Peluquerías</span>
+      <span class="client-name">Logística</span>
+      <span class="client-name">Reformas</span>
+      <span class="client-name">Campus Derecho</span>
     </div>
   </div>
 </div>
@@ -310,63 +312,199 @@
   </div>
 </section>
 
-<!-- ══ PROYECTOS ══ -->
-<section id="proyectos">
+<!-- ══ SISTEMAS ══ -->
+<section id="sistemas">
   <div class="container">
     <div class="section-head fade-up">
       <div class="eyebrow-b">
         <div class="eyebrow-b-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
         </div>
         <div class="eyebrow-b-text">
-          <span class="eyebrow-b-label">Casos reales</span>
-          <span class="eyebrow-b-title">Proyectos</span>
+          <span class="eyebrow-b-label">Software a medida</span>
+          <span class="eyebrow-b-title">Sistemas Firztnet</span>
         </div>
       </div>
-      <h2>En producción<br>ahora mismo</h2>
-      <p class="section-sub">No son demos ni mockups. Son proyectos reales que funcionan ahora mismo.</p>
+      <h2>Sistemas reales,<br>listos para tu sector</h2>
+      <p class="section-sub">Cada sistema está construido para un sector concreto — no es una plantilla adaptada, es software pensado desde cero para cómo trabaja ese negocio.</p>
     </div>
 
-    <div class="proj-grid">
-      <div class="proj-card fade-up">
-        <div class="proj-img">
-          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80" alt="Web de Firztnet — taller de reparación" loading="lazy">
-          <span class="proj-badge">En vivo</span>
+    <div class="sistemas-grid">
+
+      <!-- 1. POS -->
+      <div class="sistema-card sistema-card--violet fade-up" data-evento="sistema_pos">
+        <div class="sistema-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="Punto de venta" loading="lazy">
+          <div class="sistema-img-overlay sistema-overlay--violet"></div>
+          <div class="sistema-img-badge">Comercio</div>
         </div>
-        <div class="proj-info">
-          <h3>Firztnet — Taller de reparación</h3>
-          <p>Web pública + sistema de gestión completo: clientes, reparaciones, facturas, inventario y estadísticas en tiempo real. El formulario llega directo al panel, sin pasos manuales.</p>
-          <div class="proj-tags">
-            <span class="proj-tag">Web a medida</span>
-            <span class="proj-tag">Panel de gestión</span>
-            <span class="proj-tag">Estadísticas</span>
-            <span class="proj-tag">Cotizador</span>
+        <div class="sistema-info">
+          <div class="sistema-badge sistema-badge--violet">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 12h.01M12 12h.01M16 12h.01"/></svg>
+            Comercio
           </div>
-          <a href="https://firztnet.es" target="_blank" rel="noopener" class="card-link" data-evento="boton_ver_firztnet" style="margin-top:.5rem">
-            Ver en vivo
-            <svg viewBox="0 0 16 16" width="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5"/></svg>
+          <h3>Firztnet · Punto de venta</h3>
+          <p>Tu tienda vende, cobra y controla el stock sin depender de ningún software externo. Pantalla táctil, caja diaria y clientes con crédito — todo en uno.</p>
+          <ul class="sistema-features">
+            <li>Cobro por táctil o teclado, sin fricción</li>
+            <li>Stock con alertas automáticas de mínimos</li>
+            <li>Clientes con saldo, crédito e historial</li>
+          </ul>
+          <span class="sistema-status">Sistema privado · Disponible para tu negocio</span>
+        </div>
+      </div>
+
+      <!-- 2. Reparaciones -->
+      <div class="sistema-card sistema-card--indigo fade-up" data-evento="sistema_reparaciones">
+        <div class="sistema-img">
+          <img src="reparaciones.webp" alt="Gestión de reparaciones — Firztnet" loading="lazy">
+          <div class="sistema-img-overlay sistema-overlay--indigo"></div>
+          <div class="sistema-img-badge">Talleres</div>
+        </div>
+        <div class="sistema-info">
+          <div class="sistema-badge sistema-badge--indigo">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            Talleres
+          </div>
+          <h3>Firztnet · Gestión de reparaciones</h3>
+          <p>Desde que entra el dispositivo hasta que el cliente lo recoge, todo queda registrado. Sin papeles, sin notas perdidas, sin llamadas de «¿cómo va lo mío?».</p>
+          <ul class="sistema-features">
+            <li>Ficha de entrada con foto y diagnóstico</li>
+            <li>Aviso automático al cliente al terminar</li>
+            <li>Control de pagos, abonos y deuda</li>
+          </ul>
+          <a href="https://firztnet.es" target="_blank" rel="noopener" class="sistema-link" data-evento="sistema_reparaciones_ver">
+            Ver en vivo en Firztnet.es
+            <svg viewBox="0 0 16 16" width="13" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5"/></svg>
           </a>
         </div>
       </div>
 
-      <div class="proj-card fade-up">
-        <div class="proj-img">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80" alt="Firztnet POS — sistema de punto de venta" loading="lazy">
-          <span class="proj-badge">En producción</span>
+      <!-- 3. Reformas -->
+      <div class="sistema-card sistema-card--orange fade-up" data-evento="sistema_reformas">
+        <div class="sistema-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Gestión de obras y reformas" loading="lazy">
+          <div class="sistema-img-overlay sistema-overlay--orange"></div>
+          <div class="sistema-img-badge">Construcción</div>
         </div>
-        <div class="proj-info">
-          <h3>Firztnet POS — Punto de venta</h3>
-          <p>Sistema de gestión a medida para comercios: cobro en caja, control de inventario, clientes con crédito y caja diaria. Sin cuotas de software de terceros.</p>
-          <div class="proj-tags">
-            <span class="proj-tag">Punto de venta</span>
-            <span class="proj-tag">Inventario</span>
-            <span class="proj-tag">Clientes con crédito</span>
-            <span class="proj-tag">Caja diaria</span>
+        <div class="sistema-info">
+          <div class="sistema-badge sistema-badge--orange">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Construcción
           </div>
-          <span class="card-link" style="margin-top:.5rem; color:var(--text-muted); cursor:default; pointer-events:none;">Sistema privado</span>
+          <h3>Firztnet · Gestión de obras y reformas</h3>
+          <p>Controla dónde están tus operarios, qué han hecho hoy y cuánto has gastado en materiales — sin llamar a nadie y desde el móvil.</p>
+          <ul class="sistema-features">
+            <li>Fichaje GPS en obra, sin papel</li>
+            <li>Presupuestos con firma digital del cliente</li>
+            <li>Compras de material enlazadas a cada obra</li>
+          </ul>
+          <span class="sistema-status">Sistema privado · Disponible para tu negocio</span>
         </div>
       </div>
+
+      <!-- 4. Logística -->
+      <div class="sistema-card sistema-card--green fade-up" data-evento="sistema_logistica">
+        <div class="sistema-img">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Gestión logística de reparto" loading="lazy">
+          <div class="sistema-img-overlay sistema-overlay--green"></div>
+          <div class="sistema-img-badge">Reparto</div>
+        </div>
+        <div class="sistema-info">
+          <div class="sistema-badge sistema-badge--green">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Reparto
+          </div>
+          <h3>Firztnet · Gestión logística</h3>
+          <p>Organiza las rutas, controla quién fichó, cuántos paquetes entregó cada repartidor y genera la factura con IVA al cierre del día — todo automático.</p>
+          <ul class="sistema-features">
+            <li>Rutas del día asignadas desde panel central</li>
+            <li>Fichaje de entrada y salida por repartidor</li>
+            <li>Facturación automática con desglose de IVA</li>
+          </ul>
+          <span class="sistema-status">Sistema privado · Disponible para tu negocio</span>
+        </div>
+      </div>
+
+      <!-- 5. Peluquería -->
+      <div class="sistema-card sistema-card--pink fade-up" data-evento="sistema_peluqueria">
+        <div class="sistema-img">
+          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Gestión para peluquerías" loading="lazy">
+          <div class="sistema-img-overlay sistema-overlay--pink"></div>
+          <div class="sistema-img-badge">Belleza</div>
+        </div>
+        <div class="sistema-info">
+          <div class="sistema-badge sistema-badge--pink">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+            Belleza
+          </div>
+          <h3>Firztnet · Gestión para peluquerías</h3>
+          <p>Adiós a la libreta y al WhatsApp para pedir cita. Tu agenda siempre visible, los clientes con su historial completo y la caja cerrada al minuto.</p>
+          <ul class="sistema-features">
+            <li>Agenda visual con huecos libres en tiempo real</li>
+            <li>Ficha de cliente con servicios y productos usados</li>
+            <li>Caja diaria con desglose por profesional</li>
+          </ul>
+          <span class="sistema-status">Sistema privado · Disponible para tu negocio</span>
+        </div>
+      </div>
+
+      <!-- 6. Hostelería -->
+      <div class="sistema-card sistema-card--amber fade-up" data-evento="sistema_bar">
+        <div class="sistema-img">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Gestión para hostelería" loading="lazy">
+          <div class="sistema-img-overlay sistema-overlay--amber"></div>
+          <div class="sistema-img-badge">Hostelería</div>
+        </div>
+        <div class="sistema-info">
+          <div class="sistema-badge sistema-badge--amber">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            Hostelería
+          </div>
+          <h3>Firztnet · Gestión para hostelería</h3>
+          <p>Mapa de mesas, comandas por categoría y cierre de caja — sin pagar licencias de TPV ni depender de tablets de empresa. Tu sistema, a tu medida.</p>
+          <ul class="sistema-features">
+            <li>Mapa de mesas en tiempo real: libre u ocupada</li>
+            <li>Comandas por categorías con impresión en cocina</li>
+            <li>Estadísticas de consumo y cierre de caja diario</li>
+          </ul>
+          <span class="sistema-status">Sistema privado · Disponible para tu negocio</span>
+        </div>
+      </div>
+
+      <!-- 7. Campus Derecho -->
+      <div class="sistema-card sistema-card--full sistema-card--blue fade-up" data-evento="sistema_derecho">
+        <div class="sistema-img sistema-img--tall">
+          <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1200&q=80" alt="Campus Derecho" loading="lazy">
+          <div class="sistema-img-overlay sistema-overlay--blue"></div>
+          <div class="sistema-img-badge">Educación</div>
+        </div>
+        <div class="sistema-info">
+          <div class="sistema-badge sistema-badge--blue">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            Educación
+          </div>
+          <h3>Firztnet · Campus Derecho</h3>
+          <p>La agenda académica que los estudiantes de Derecho necesitaban. Asignaturas, apuntes, exámenes, hitos del curso y simulacros de test — todo en un mismo sitio, con un diseño que da gusto usar.</p>
+          <ul class="sistema-features">
+            <li>Panel de asignaturas con apuntes y recursos por tema</li>
+            <li>Calendario de exámenes, parciales e hitos del curso</li>
+            <li>Simulacros tipo test con corrección automática</li>
+          </ul>
+          <span class="sistema-status">Sistema privado · Disponible para estudiantes de Derecho</span>
+        </div>
+      </div>
+
     </div>
+
+    <div class="sistemas-cta fade-up">
+      <p>¿Tu negocio necesita algo parecido o completamente diferente?</p>
+      <a href="#contacto" class="btn-primary" data-evento="sistemas_cta_contacto">
+        Hablemos de tu caso
+        <svg viewBox="0 0 20 20" width="16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+      </a>
+    </div>
+
   </div>
 </section>
 
